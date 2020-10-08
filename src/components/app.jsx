@@ -5,6 +5,7 @@ import flats from '../../data/flat';
 import FlatList from "./flat_list";
 import Marker from "./marker";
 
+console.log(process.env.REACT_APP_GOOGLE_MAP_REACT_KEY)
 class App extends Component {
   constructor(props) {
     super(props);
@@ -36,7 +37,7 @@ class App extends Component {
         />
         <div className="map-container">
           <GoogleMapReact
-            bootstrapURLKeys={{ key: "AIzaSyD7v4PEw6NyBEoR32JZNvgWX06XZBdy2B8" }}
+            bootstrapURLKeys={{ key: `${process.env.REACT_APP_GOOGLE_MAP_REACT_KEY}` }}
             defaultCenter={this.center()}
             defaultZoom={12}
           >
